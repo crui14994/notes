@@ -1,0 +1,31 @@
+pre[class*="language-"] {
+    border          : none;
+    /* background-color: #f7f7f7; */
+    font-size       : 1em;
+    line-height     : 1.2em;
+}
+
+.treeview__container{
+    margin-bottom: 0;
+    border-bottom: dashed 1px #787878;
+}
+.treeview__container-title{
+    display: none;
+}
+.book-body{
+    background:#FFFFFF;
+}
+.page-inner{
+    max-width: 80%;
+}
+.markdown-section{
+    color: #304455;
+}
+:not(pre) > code[class*="language-"], pre[class*="language-"]{
+    background: #F8F8F8;
+}
+.copy-code-button{
+    background-color: rgba(223, 219, 219,.5)!important;
+    border: solid 1px #F8F8F8!important;
+    color: rgba(0,0,0,.3)!important;
+}
