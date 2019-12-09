@@ -20,7 +20,7 @@
         dataType: "json",
         async: true,
         cache: false,
-        crossDomain:  true == !(document.all),
+        crossDomain:  true,
         success: res => {
             console.log(1,res)
         },

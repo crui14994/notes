@@ -36,9 +36,9 @@
     * [jQuery插件编写模板](JS/jQuery插件编写模板.md)
     * [数组常用方法](JS/数组常用方法.md)
     * [Object.keys方法](JS/Object.keys方法.md)
-    * [前端针对ajax请求loading效果实现的方法](JS/前端针对ajax请求loading效果实现的方法.md)
     * [ajax在ie9浏览器请求失败的兼容问题](JS/ajax在ie9浏览器请求失败的兼容问题.md)
-
+    * [前端针对ajax请求loading效果实现的方法](JS/前端针对ajax请求loading效果实现的方法.md)
+    
 * [常用代码](code/README.md)
     * [常用js代码](code/js.md)
     * [常用css代码](code/css.md)
