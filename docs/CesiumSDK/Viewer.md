@@ -1,4 +1,4 @@
-# Viewer
+## Viewer
 
 使用步骤
 
@@ -15,54 +15,58 @@ let CM = new CesiumMap("cesiumContainer", { imageryProvider: null });
 window.CM = CM;
 //window.viewer为cesium实例化得到的viewer，与cesiumSDK无关；
 // 主要用于cesium本身一些方法的调用和扩展。
-window.viewer = CM.Viewer._viewer; 
+window.viewer = CM.Viewer._viewer;
 ```
 
-## 加载影像图层 addBaseLayer
+#### 加载影像图层 addBaseLayer
 
 - @param
 
-  baseLayers(type:Arrary) : 通过 Imagery 创建的图层数组
-
-  removeAllLayer(type:Boolean) ： 是否清除全部图层再加载,默认 false
+| 参数名         | type    | 描述                        | 默认值 |
+| -------------- | ------- | --------------------------- | ------ |
+| baseLayers     | Arrary  | 通过 Imagery 创建的图层数组 | -      |
+| removeAllLayer | Boolean | 是否清除全部图层再加载      | false  |
 
 ```js
 let img = CM.Imagery.createGoogleImageryProvider("img");
 CM.Viewer.addBaseLayer([img]);
 ```
 
-## 加载地形 addTerrain
+#### 加载地形 addTerrain
 
 - @param
 
-  terrain(type:Object) : 通过new Cesium.CesiumTerrainProvider得到的地形数据
+| 参数名  | type   | 描述                                                 | 默认值 |
+| ------- | ------ | ---------------------------------------------------- | ------ |
+| terrain | Object | 通过 new Cesium.CesiumTerrainProvider 得到的地形数据 | -      |
 
 ```js
 let muchuan = CM.Imagery.createUrlTerrain({ url: "地形url" });
 CM.Viewer.addTerrain(muchuan);
 ```
 
-
-## 加载kml loadKml
+#### 加载 kml loadKml
 
 - @param
 
-  kmlUrl(type:String) : kml地址
-
-  fly(type:Boolean) : 是否飞行到kml区域 默认false
+| 参数名 | type    | 描述                | 默认值 |
+| ------ | ------- | ------------------- | ------ |
+| kmlUrl | String  | kml 地址            | -      |
+| fly    | Boolean | 是否飞行到 kml 区域 | false  |
 
 ```js
-CM.Viewer.loadKml("kmlUrl",true);
+CM.Viewer.loadKml("kmlUrl", true);
 ```
 
-## geoJson loadGeoJson
+#### geoJson loadGeoJson
 
 - @param
 
-  jsonUrl(type:String) : GeoJson地址
-
-  fly(type:Boolean) : 是否飞行到kml区域 默认false
+| 参数名  | type    | 描述                    | 默认值 |
+| ------- | ------- | ----------------------- | ------ |
+| jsonUrl | String  | GeoJson 地址            | -      |
+| fly     | Boolean | 是否飞行到 GeoJson 区域 | false  |
 
 ```js
-CM.Viewer.loadKml("kmlUrl",true);
+CM.Viewer.loadKml("kmlUrl", true);
 ```
