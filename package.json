@@ -1,7 +1,0 @@
-{
-  "scripts": {
-    "dev": "gitbook serve",
-    "build": "gitbook build",
-    "deploy": "deploy.sh"
-  }
-}
