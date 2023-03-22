@@ -4,26 +4,34 @@
 
 - @param
 
-  positions(type:Array) : 两点的坐标数组
+| 参数名    | type  | 描述           | 默认值 |
+| --------- | ----- | -------------- | ------ |
+| positions | Array | 两点的坐标数组 | -      |
 
 - @returns
 
-  distance ：两点距离。如：
+| 返回值   | type   | 描述       |
+| -------- | ------ | ---------- |
+| distance | Object | 两点距离。 |
 
-  ```js
-  let distance = CM.BaseFn.getSpaceDistance(positions);
-  ```
+```js
+let distance = CM.BaseFn.getSpaceDistance(positions);
+```
 
 ## 计算多边形面积 getArea
 
 - @param
 
-  points(type:Array) : 多边形点位的坐标数组
+| 参数名 | type  | 描述                 | 默认值 |
+| ------ | ----- | -------------------- | ------ |
+| points | Array | 多边形点位的坐标数组 | -      |
 
 - @returns
 
-  area ：面积 。如：
+| 返回值 | type   | 描述   |
+| ------ | ------ | ------ |
+| area   | Object | 面积。 |
 
-  ```js
-  let area = CM.BaseFn.getArea(points);
-  ```
+```js
+let area = CM.BaseFn.getArea(points);
+```

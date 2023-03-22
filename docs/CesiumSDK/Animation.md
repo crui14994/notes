@@ -4,11 +4,13 @@
 
 - @param
 
-  position : 84 坐标
+| 参数名   | type   | 描述    | 默认值 |
+| -------- | ------ | ------- | ------ |
+| position | Object | 84 坐标 | -      |
 
-  ```js
-  let point = CM.Animation.setView(114.40782845, 30.51011682, 5000.0);
-  ```
+```js
+let point = CM.Animation.setView(114.40782845, 30.51011682, 5000.0);
+```
 
 ## 开始自转 startIcrf
 
@@ -30,15 +32,15 @@ CM.Animation.stopTcrf();
 
 - @param
 
-  target : 可以是 entity、entities、tilse 或者 data source
+| 参数名   | type     | 描述                                            | 默认值 |
+| -------- | -------- | ----------------------------------------------- | ------ |
+| target   | Object   | 可以是 entity、entities、tilse 或者 data source | -      |
+| callback | Function | 定位完成的回调函数                              | -      |
+| duration | Function | 飞行时间                                        | 3      |
 
-  callback : 定位完成的回调函数
-
-  duration : 飞行时间;默认 3
-
-  ```js
-  let point = CM.Animation.viewerFlyTo(target, () => {}, 3);
-  ```
+```js
+let point = CM.Animation.viewerFlyTo(target, () => {}, 3);
+```
 
 ## 定位到某个坐标 cameraFlyTo
 
@@ -46,12 +48,12 @@ CM.Animation.stopTcrf();
 
 - @param
 
-  position : 坐标
+| 参数名   | type     | 描述               | 默认值 |
+| -------- | -------- | ------------------ | ------ |
+| position | Object   | 坐标               | -      |
+| callback | Function | 定位完成的回调函数 | -      |
+| duration | Function | 飞行时间           | 3      |
 
-  callback : 定位完成的回调函数
-
-  duration : 飞行时间
-
-  ```js
-  let point = CM.Animation.cameraFlyTo(position, () => {}, 3);
-  ```
+```js
+let point = CM.Animation.cameraFlyTo(position, () => {}, 3);
+```
