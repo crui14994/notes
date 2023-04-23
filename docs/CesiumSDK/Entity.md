@@ -48,7 +48,7 @@ CM.Entity.removeAllEntity(id);
 CM.Entity.onClick((entity) => {});
 ```
 
-####### 注销点击事件 removeClick
+#### 注销点击事件 removeClick
 
 ```js
 CM.Entity.removeClick();
@@ -60,7 +60,7 @@ CM.Entity.removeClick();
 CM.Entity.entityMove();
 ```
 
-#### 注销点击事件 removeEntityMove
+#### 注销拖拽事件 removeEntityMove
 
 ```js
 CM.Entity.removeEntityMove();
