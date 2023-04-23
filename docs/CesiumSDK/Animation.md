@@ -4,12 +4,19 @@
 
 - @param
 
-| 参数名   | type   | 描述    | 默认值 |
-| -------- | ------ | ------- | ------ |
-| position | Object | 84 坐标 | -      |
+| 参数名   | type   | 描述 | 默认值 |
+| -------- | ------ | ---- | ------ |
+| position | Object | 坐标 | -      |
 
 ```js
-let point = CM.Animation.setView(114.40782845, 30.51011682, 5000.0);
+let point = CM.Animation.setView({
+  lng: "109.029098",
+  lat: "32.690817",
+  height: "100000",
+  heading: "0", //可不传，默认为0
+  pitch: "-90", //可不传，默认为-90
+  roll: "0", //可不传，默认为0
+});
 ```
 
 ## 开始自转 startIcrf
@@ -55,5 +62,16 @@ let point = CM.Animation.viewerFlyTo(target, () => {}, 3);
 | duration | Function | 飞行时间           | 3      |
 
 ```js
-let point = CM.Animation.cameraFlyTo(position, () => {}, 3);
+let point = CM.Animation.cameraFlyTo(
+  {
+    lng: "109.029098",
+    lat: "32.690817",
+    height: "100000",
+    heading: "0", //可不传，默认为0
+    pitch: "-90", //可不传，默认为-90
+    roll: "0", //可不传，默认为0
+  },
+  () => {},
+  3
+);
 ```
