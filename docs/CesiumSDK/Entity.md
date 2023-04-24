@@ -56,8 +56,14 @@ CM.Entity.removeClick();
 
 #### 注册 Entity 拖拽事件 entityMove
 
+- @param
+
+| 参数名   | type     | 描述                                                                                                     | 默认值 |
+| -------- | -------- | -------------------------------------------------------------------------------------------------------- | ------ |
+| callback | Function | 回调函数；返回当前托动entity实体对象 | -      |
+
 ```js
-CM.Entity.entityMove();
+CM.Entity.entityMove((entity)=>{});
 ```
 
 #### 注销拖拽事件 removeEntityMove
