@@ -139,3 +139,23 @@ let options ={
 let img = CM.Imagery.CesiumTerrainProvider(options);
 viewer.addBaseLayer([img])
 ```
+
+#### 根据 geojson 创建一个地图区域，其它区域已指定颜色填充
+
+- @param
+
+| 参数名  | type   | 描述         | 默认值  |
+| ------- | ------ | ------------ | ------- |
+| geojson | Object | json 数据    | -       |
+| bgColor | String | 填充颜色颜色 | #081122 |
+
+- @returns
+
+| 返回值 | type   | 描述                                            |
+| ------ | ------ | ----------------------------------------------- |
+| primit | Object | 返回 viewer.scene.primitives.add 创建的图层对象 |
+
+```js
+let json = require("******.json");
+let primit = CM.Imagery.createGeojsonArea(json);
+```
