@@ -198,3 +198,38 @@ let rectangle = CM.Draw.loadRectangle(rectanglePosition, myData);
 ```js
 CM.Draw.Rectangle((rectangle, rectangleData) => {});
 ```
+
+## 创建一个带材质的墙体 Wall
+
+- @param
+
+| 参数名       | type   | 描述                                                        | 默认值 |
+| ------------ | ------ | ----------------------------------------------------------- | ------ |
+| wallPosition | Array  | 带高度的经纬度数组 如：[103.56,30.2,500,104.2,31.6,500,...] | -      |
+| material     | Object | 材质；根据 CM.Materail.createCustomMaterial 方法创建        | -      |
+| wallStyle    | Object | 其它一些关于 wall 的配置，参考 cesium 官方文档              | -      |
+
+- @returns
+
+| 返回值     | type   | 描述                     |
+| ---------- | ------ | ------------------------ |
+| wallEntity | Object | 返回一个 wall 实体对象。 |
+
+```js
+let wallPosition = [
+  104.07263175401185, 30.647622150198725, 500.0, 104.06369117158526,
+  30.648834374000277, 500.0, 104.06437182811021, 30.62274533905387, 500.0,
+  104.07463538167119, 30.62285687644371, 500.0, 104.07263175401185,
+  30.647622150198725, 500.0,
+];
+let material = CM.Materail.createCustomMaterial({
+  image: "data/images/Textures/test1.png",
+  freely: "cross",
+  direction: "+",
+  count: 3,
+  color: Cesium.Color.BLUE,
+  duration: 2000,
+});
+
+let wallEntity = CM.Draw.Wall(wallPosition, material);
+```
