@@ -91,7 +91,7 @@ let point = CM.Animation.cameraFlyTo(
 );
 ```
 
-#### 定位到某个坐标 setCameraEotateHeading
+#### 相机绕点旋转 setCameraEotateHeading
 
 - @param
 
