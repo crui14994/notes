@@ -39,6 +39,47 @@ let sources = {
 CM.Viewer.setSkyBox(sources);
 ```
 
+#### 设置黑夜特效 setDarkEffect
+
+- @returns
+
+| 返回值 | type   | 描述                                |
+| ------ | ------ | ----------------------------------- |
+| Effect | Object | 返回创建的 postProcessStages 对象。 |
+
+```js
+let Effect = CM.Viewer.setDarkEffect();
+
+setTimeout(() => {
+  // viewer.postProcessStages.remove(Effect);
+  viewer.postProcessStages.removeAll();
+}, 5000);
+```
+
+#### 设置雨天特效 setSnowEffect
+
+- @returns
+
+| 返回值 | type   | 描述                                |
+| ------ | ------ | ----------------------------------- |
+| Effect | Object | 返回创建的 postProcessStages 对象。 |
+
+```js
+let Effect = CM.Viewer.setSnowEffect();
+```
+
+#### 设置雪天特效 setSnowEffect
+
+- @returns
+
+| 返回值 | type   | 描述                                |
+| ------ | ------ | ----------------------------------- |
+| Effect | Object | 返回创建的 postProcessStages 对象。 |
+
+```js
+let Effect = CM.Viewer.setSnowEffect();
+```
+
 #### 加载影像图层 addBaseLayer
 
 - @param
