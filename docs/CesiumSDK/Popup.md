@@ -1,6 +1,6 @@
-# Imagery
+## Imagery
 
-## 创建弹窗 createPopup
+#### 创建弹窗 createPopup
 
 - @param
 
@@ -24,7 +24,7 @@ CM.Imagery.createPopup(
 );
 ```
 
-## 关闭 popup 弹窗 closePopup
+#### 关闭 popup 弹窗 closePopup
 
 ```js
 CM.Imagery.closePopup();

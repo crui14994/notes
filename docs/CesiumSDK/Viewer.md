@@ -18,6 +18,27 @@ window.CM = CM;
 window.viewer = CM.Viewer._viewer;
 ```
 
+#### 设置天空盒 setSkyBox
+
+- @param
+
+| 参数名  | type   | 描述                        | 默认值 |
+| ------- | ------ | --------------------------- | ------ |
+| sources | Object | 盒子图片组成的 sources 对象 | -      |
+
+```js
+let sources = {
+  positiveX: "data/images/SkyBox/tycho2t3_80_pxs.jpg",
+  negativeX: "data/images/SkyBox/tycho2t3_80_mxs.jpg",
+  positiveY: "data/images/SkyBox/tycho2t3_80_pys.jpg",
+  negativeY: "data/images/SkyBox/tycho2t3_80_mys.jpg",
+  positiveZ: "data/images/SkyBox/tycho2t3_80_pzs.jpg",
+  negativeZ: "data/images/SkyBox/tycho2t3_80_mzs.jpg",
+};
+
+CM.Viewer.setSkyBox(sources);
+```
+
 #### 加载影像图层 addBaseLayer
 
 - @param
