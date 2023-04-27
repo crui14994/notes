@@ -21,15 +21,14 @@ let point = CM.Animation.setView({
 
 #### 异步设置摄像机以查看提供的一个或多个实体或数据源 zoomTo
 
- 用法与cesium官方[文档](http://cesium.xin/cesium/cn/Documentation1.62/Viewer.html?classFilter=viewer)一致！
-
+用法与 cesium 官方[文档](http://cesium.xin/cesium/cn/Documentation1.62/Viewer.html?classFilter=viewer)一致！
 
 - @param
 
-| 参数名   | type   | 描述 | 默认值 |
-| -------- | ------ | ---- | ------ |
-| target | Object | 实体，实体阵列，实体集合，数据源，要查看的Cesium3DTileset，点云或图像层。 | -      |
-| offset | Object | 在局部东北向上参考系中，距实体中心的偏移量。 | -      |
+| 参数名 | type   | 描述                                                                       | 默认值 |
+| ------ | ------ | -------------------------------------------------------------------------- | ------ |
+| target | Object | 实体，实体阵列，实体集合，数据源，要查看的 Cesium3DTileset，点云或图像层。 | -      |
+| offset | Object | 在局部东北向上参考系中，距实体中心的偏移量。                               | -      |
 
 ```js
 let point = CM.Animation.zoomTo(target);
@@ -90,4 +89,28 @@ let point = CM.Animation.cameraFlyTo(
   () => {},
   3
 );
+```
+
+#### 定位到某个坐标 setCameraEotateHeading
+
+- @param
+
+| 参数名   | type   | 描述                                         | 默认值 |
+| -------- | ------ | -------------------------------------------- | ------ |
+| position | Object | 坐标等信息                                   | -      |
+| speed    | Number | 飞行一周所需时间，比如 30s, 那么每秒转动度数 | 30     |
+
+```js
+let options = {
+  lng: 104.06437182811021,
+  lat: 30.62274533905387,
+  height: 1000,
+};
+
+CM.Animation.setCameraEotateHeading(options);
+
+setTimeout(() => {
+  //停止旋转
+  viewer.clock.stopTime = viewer.clock.startTime;
+}, 5000);
 ```
