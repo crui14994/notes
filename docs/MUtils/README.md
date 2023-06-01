@@ -1,17 +1,13 @@
-<!--
- * @Author: 
- * @Date: 2023-05-05 17:48:50
- * @LastEditTime: 2023-05-05 17:48:50
- * @LastEditors: 
- * @Description: 
--->
-<!--
- * @Author: 
- * @Date: 2023-03-21 16:16:21
- * @LastEditTime: 2023-03-21 16:16:48
- * @LastEditors: Please set LastEditors
- * @Description: 
--->
-# CesiumSDK
+> 封装的一些常用方法。
 
-> An awesome project.
+安装：[npm 地址](https://www.npmjs.com/package/m-utils-js)
+
+###### 安装 mUtils
+
+```bash
+//cnpm安装
+cnpm i m-utils-js -S
+
+//import 导入
+import mUtils from "m-utils-js"
+```
