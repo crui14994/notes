@@ -13,5 +13,6 @@
   - [Position](docs/CesiumSDK/Position)
   - [Popup](docs/CesiumSDK/Popup)
   - [Draw](docs/CesiumSDK/Draw)
+  - [Materail](docs/CesiumSDK/Materail)
   - [Animation](docs/CesiumSDK/Animation)
   - [BaseFn](docs/CesiumSDK/BaseFn)
