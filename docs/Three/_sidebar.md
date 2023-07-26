@@ -11,3 +11,4 @@
   - [三维数据格式](docs/Three/三维数据格式)
   - [材质（Material）](docs/Three/材质（Material）)
   - [不规则几何体重新设置UV坐标](docs/Three/不规则几何体重新设置UV坐标)
+  - [常用属性和方法](docs/Three/常用属性和方法)
