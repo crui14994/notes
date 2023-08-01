@@ -26,7 +26,7 @@ viewer.addBaseLayer([img, cva]);
 
 | 参数名 | type   | 描述                                           | 默认值 |
 | ------ | ------ | ---------------------------------------------- | ------ |
-| style  | String | 地图图层类型；可选值（img、vec、normal、dark） | -      |
+| style  | String | 地图图层类型；可选值（img、vec、elec、normal、dark） | -      |
 
 - @returns
 
@@ -35,8 +35,15 @@ viewer.addBaseLayer([img, cva]);
 | layerObj | Object | 返回创建的图层对象，通过 Viewer.addBaseLayer 加载。 |
 
 ```js
+// 影像
 let img = CM.Imagery.createBaiduImageryProvider("img");
-viewer.addBaseLayer([img]);
+let vec = CM.Imagery.createBaiduImageryProvider("vec");
+CM.Viewer.addBaseLayer([img, vec], true);
+
+// 电子
+let img = CM.Imagery.createBaiduImageryProvider("elec");
+CM.Viewer.addBaseLayer([img], true);
+
 ```
 
 #### 腾讯地图 createTencentImageryProvider
@@ -54,8 +61,22 @@ viewer.addBaseLayer([img]);
 | layerObj | Object | 返回创建的图层对象，通过 Viewer.addBaseLayer 加载。 |
 
 ```js
-let img = CM.Imagery.createTencentImageryProvider(1);
-viewer.addBaseLayer([img]);
+// 影像
+let img = CM.Imagery.createTencentImageryProvider("img");
+let vec = CM.Imagery.createTencentImageryProvider(2);
+CM.Viewer.addBaseLayer([img, vec], true);
+
+//经典
+let img = CM.Imagery.createTencentImageryProvider();
+CM.Viewer.addBaseLayer([img], true);
+
+// 墨渊
+let img = CM.Imagery.createTencentImageryProvider(4);
+CM.Viewer.addBaseLayer([img], true);
+
+// 白浅
+let img = CM.Imagery.createTencentImageryProvider(8);
+CM.Viewer.addBaseLayer([img], true);
 ```
 
 #### 高德地图 createAmapImageryProvider
@@ -73,8 +94,14 @@ viewer.addBaseLayer([img]);
 | layerObj | Object | 返回创建的图层对象，通过 Viewer.addBaseLayer 加载。 |
 
 ```js
+// 影像
 let img = CM.Imagery.createAmapImageryProvider("img");
-viewer.addBaseLayer([img]);
+let cva = CM.Imagery.createAmapImageryProvider("cva");
+CM.Viewer.addBaseLayer([img, cva], true);
+
+// 电子
+let img = CM.Imagery.createAmapImageryProvider("elec");
+CM.Viewer.addBaseLayer([img], true);
 ```
 
 #### 谷歌地图 createGoogleImageryProvider
@@ -92,8 +119,18 @@ viewer.addBaseLayer([img]);
 | layerObj | Object | 返回创建的图层对象，通过 Viewer.addBaseLayer 加载。 |
 
 ```js
+// 影像
 let img = CM.Imagery.createGoogleImageryProvider("img");
-viewer.addBaseLayer([img]);
+let cva = CM.Imagery.createGoogleImageryProvider("img_cva");
+viewer.addBaseLayer([img, cva], true);
+
+// 电子
+let img = CM.Imagery.createGoogleImageryProvider("elec");
+viewer.addBaseLayer([img], true);
+
+// 地形
+let img = CM.Imagery.createGoogleImageryProvider("ter");
+viewer.addBaseLayer([img], true);
 ```
 
 #### 创建自定义地图图层 createUrlImageryLayer
