@@ -54,14 +54,14 @@ CM.Animation.stopTcrf();
 
 - @param
 
-| 参数名   | type     | 描述                                            | 默认值 |
-| -------- | -------- | ----------------------------------------------- | ------ |
-| target   | Object   | 可以是 entity、entities、tilse 或者 data source | -      |
-| callback | Function | 定位完成的回调函数                              | -      |
-| duration | Function | 飞行时间                                        | 3      |
+| 参数名   | type     | 描述                                            | 默认值       |
+| -------- | -------- | ----------------------------------------------- | ------------ |
+| target   | Object   | 可以是 entity、entities、tilse 或者 data source | -            |
+| option   | Object   | 参考 viewer.flyTo 的参数                        | {duration:3} |
+| callback | Function | 定位完成的回调函数                              | -            |
 
 ```js
-let point = CM.Animation.viewerFlyTo(target, () => {}, 3);
+let point = CM.Animation.viewerFlyTo(target, { duration: 1 }, () => {});
 ```
 
 #### 定位到某个坐标 cameraFlyTo
