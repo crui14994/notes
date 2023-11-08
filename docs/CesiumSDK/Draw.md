@@ -199,7 +199,7 @@ let rectangle = CM.Draw.loadRectangle(rectanglePosition, myData);
 CM.Draw.Rectangle((rectangle, rectangleData) => {});
 ```
 
-#### 创建一个带材质的墙体 Wall
+#### 创建一个带材质的墙体 loadWall
 
 - @param
 
@@ -222,7 +222,7 @@ let wallPosition = [
   104.07463538167119, 30.62285687644371, 500.0, 104.07263175401185,
   30.647622150198725, 500.0,
 ];
-let material = CM.Materail.createCustomMaterial({
+let material = CM.Material.createCustomMaterial({
   image: "data/images/Textures/test1.png",
   freely: "cross",
   direction: "+",
@@ -231,5 +231,51 @@ let material = CM.Materail.createCustomMaterial({
   duration: 2000,
 });
 
-let wallEntity = CM.Draw.Wall(wallPosition, material);
+let wallEntity = CM.Draw.loadWall(wallPosition, material);
+```
+
+#### 创建一个水波纹图标点 loadCircleWaveMarker
+
+- @param
+
+| 参数名  | type   | 描述                   | 默认值 |
+| ------- | ------ | ---------------------- | ------ |
+| options | Object | 水波纹图标点配置，属性参考下表 | -      |
+
+###### options 属性
+
+| 属性名       | type   | 描述                                                     | 默认值                                      |
+| ------------ | ------ | -------------------------------------------------------- | ------------------------------------------- |
+| position     | Object | 84 坐标                                                  | -                                           |
+| material     | Object | 材质；根据 CM.Materail.createCircleWaveMaterial 方法创建 | -                                           |
+| ellipseStyle | Object | 其它一些关于 ellipse 的配置，参考 cesium 官方文档        | { semiMinorAxis: 2000,semiMajorAxis: 2000,} |
+| myData       | Object | 自定义的数据，在监听点击事件时根据此属性获取             | -                                           |
+| imgUrl       | Object | 图标文件，通过 require 获取                              | -                                           |
+| imgSize      | Object | 图标大小                                                 | {w:40,h:40}                                 |
+
+- @returns
+
+| 返回值           | type   | 描述                           |
+| ---------------- | ------ | ------------------------------ |
+| circleWaveEntity | Object | 返回一个 circleWave 实体对象。 |
+
+```js
+let material = CM.Material.createCircleWaveMaterial({
+  color: new Cesium.Color.fromCssColorString("#41A97F"),
+  speed: 12.0,
+  count: 3,
+  gradient: 0.2,
+});
+
+let circleWaveEntity = CM.Draw.loadCircleWaveMarker({
+  position: { lng: "105.885597", lat: "32.67532" },
+  material,
+  // ellipseStyle: {
+  //   semiMinorAxis: 2000,
+  //   semiMajorAxis: 2000,
+  // },
+  // imgUrl:'',
+  // myData:{},
+  // imgSize:{ w: 40, h: 40 }
+});
 ```
