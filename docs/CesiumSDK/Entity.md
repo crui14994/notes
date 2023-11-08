@@ -147,7 +147,6 @@ let clusterDataSource = CM.Entity.getClusterDataSource();
 - @returns
 
 | 返回值            | type   | 描述                             |
-| ----------------- | ------ | -------------------------------- | --- |
 | clusterDataSource | Object | 自定义的聚合图标 DataSource 对象 | -   |
 
 ###### clusterIconConfig
