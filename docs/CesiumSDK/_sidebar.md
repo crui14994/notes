@@ -1,7 +1,7 @@
 <!--
  * @Author:
  * @Date: 2023-03-21 16:23:07
- * @LastEditTime: 2023-05-05 17:51:57
+ * @LastEditTime: 2023-11-28 14:20:36
  * @LastEditors: Please set LastEditors
  * @Description:
 -->
@@ -15,4 +15,5 @@
   - [Draw](docs/CesiumSDK/Draw)
   - [Materail](docs/CesiumSDK/Materail)
   - [Animation](docs/CesiumSDK/Animation)
+  - [Roaming](docs/CesiumSDK/Roaming)
   - [BaseFn](docs/CesiumSDK/BaseFn)
