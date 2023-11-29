@@ -1,14 +1,14 @@
 <!--
  * @Author:
  * @Date: 2023-06-30 15:32:17
- * @LastEditTime: 2023-11-08 11:07:06
+ * @LastEditTime: 2023-11-28 15:24:19
  * @LastEditors: Please set LastEditors
  * @Description:
 -->
 
 # Material
 
-#### 创建自定义材质 createWallMaterial
+#### 创建自定义围墙材质 createWallMaterial
 
 - @param
 
