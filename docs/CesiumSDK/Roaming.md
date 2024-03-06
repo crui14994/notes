@@ -1,7 +1,7 @@
 <!--
  * @Author:
  * @Date: 2023-11-28 14:19:23
- * @LastEditTime: 2023-11-28 15:00:47
+ * @LastEditTime: 2023-12-07 14:13:42
  * @LastEditors: Please set LastEditors
  * @Description:
 -->
@@ -99,4 +99,16 @@ CM.Roaming.RoamingPitch(value);
 
 ```js
 CM.Roaming.RoamingHeight(value);
+```
+
+#### 改变距中心的距离 RoamingRange
+
+- @param
+
+| 参数名 | type   | 描述       | 默认值 |
+| ------ | ------ | ---------- | ------ |
+| value  | Number | 距中心的距离 | 50    |
+
+```js
+CM.Roaming.RoamingRange(value);
 ```
