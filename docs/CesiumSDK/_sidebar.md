@@ -17,3 +17,4 @@
   - [Animation](docs/CesiumSDK/Animation)
   - [Roaming](docs/CesiumSDK/Roaming)
   - [BaseFn](docs/CesiumSDK/BaseFn)
+  - [MVT](docs/CesiumSDK/MVT)
