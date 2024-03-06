@@ -53,7 +53,9 @@ CM.Entity.removeAllEntity(id);
 | clickType | String | 当前点击的类型         | Entity-实体对象 ImageryLayerFeatures-图层对象（如 pbf 瓦片等） |
 
 ```js
-CM.Entity.onClick((et, event, clickType) => {});
+CM.Entity.onClick((et, event, clickType) => {
+    console.log(et, event, clickType)
+});
 ```
 
 #### 注销点击事件 removeClick
