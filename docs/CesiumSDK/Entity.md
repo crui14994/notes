@@ -44,8 +44,16 @@ CM.Entity.removeAllEntity(id);
 | -------- | -------- | --------------------------------------------------------------------------------------------------------- | ------ |
 | callback | Function | 回调函数；返回 entity 实体对象;如果当前点击只有一个实体返回当前实体，如果有多个实体返回所有实体对象数组。 | -      |
 
+###### callback 回调函数返回值
+
+| 属性名    | type   | 描述                   | 值                                                             |
+| --------- | ------ | ---------------------- | -------------------------------------------------------------- |
+| data      | Array  | 当前点击对象组成的数组 | -                                                              |
+| event     | Object | 点击事件的 event 对象  | -                                                              |
+| clickType | String | 当前点击的类型         | Entity-实体对象 ImageryLayerFeatures-图层对象（如 pbf 瓦片等） |
+
 ```js
-CM.Entity.onClick((entity) => {});
+CM.Entity.onClick((et, event, clickType) => {});
 ```
 
 #### 注销点击事件 removeClick
@@ -146,8 +154,8 @@ let clusterDataSource = CM.Entity.getClusterDataSource();
 
 - @returns
 
-| 返回值            | type   | 描述                             |
-| clusterDataSource | Object | 自定义的聚合图标 DataSource 对象 | -   |
+| 返回值 | type | 描述 |
+| clusterDataSource | Object | 自定义的聚合图标 DataSource 对象 | - |
 
 ###### clusterIconConfig
 
