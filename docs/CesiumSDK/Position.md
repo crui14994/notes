@@ -39,7 +39,7 @@ let position2 = CM.Position.getClickPosition(2);
 let position3 = CM.Position.getClickPosition(3);
 ```
 
-#### 根据经纬度获取 terrain 高程，精度为m  getHeigthByLonLat
+#### 根据经纬度获取 terrain 高程，精度为 m getHeigthByLonLat
 
 - @param
 
@@ -70,9 +70,9 @@ CM.Position.getHeigthByLonLat("35.125", "104.5").then((height) => {
 
 - @returns
 
-| 返回值 | type   | 描述                           |
-| ------ | ------ | ------------------------------ |
-| wgs84Obj  | Object | 返回一个经纬度高度的 84 坐标。 |
+| 返回值   | type   | 描述                           |
+| -------- | ------ | ------------------------------ |
+| wgs84Obj | Object | 返回一个经纬度高度的 84 坐标。 |
 
 ```js
 let wgs84 = CM.Position.transformCartesianToWGS84(cartesian);
@@ -93,7 +93,8 @@ let wgs84 = CM.Position.transformCartesianToWGS84(cartesian);
 | Cartesian3Obj | Object | 返回一个 Cartesian3 世界坐标。 |
 
 ```js
-let wgs84 = CM.Position.transformWGS84ToCartesian(position);
+let wgs84 = { lng: 104.6926049397171, lat: 31.449924438393886, height: 0 };
+let wgs84 = CM.Position.transformWGS84ToCartesian(wgs84);
 ```
 
 #### 84 纬度坐标转换为 84 弧度坐标 transformWGS84ToCartographic
@@ -111,7 +112,8 @@ let wgs84 = CM.Position.transformWGS84ToCartesian(position);
 | CartographicObj | Object | 返回一个 cartographic 84 弧度坐标。 |
 
 ```js
-let cartographic = CM.Position.transformWGS84ToCartographic(position);
+let wgs84 = { lng: 104.6926049397171, lat: 31.449924438393886, height: 0 };
+let cartographic = CM.Position.transformWGS84ToCartographic(wgs84);
 ```
 
 #### 世界坐标数组转 84 坐标数组 transformCartesianArrayToWGS84Array
@@ -147,7 +149,11 @@ let wgs84Arr = CM.Position.transformCartesianArrayToWGS84Array(cartesianArr);
 | cartesianArr | Array | 世界坐标数组 |
 
 ```js
-let wgs84Arr = CM.Position.transformWGS84ArrayToCartesianArray(cartesianArr);
+let wgs84Arr = [
+  { lng: 104.6926049397171, lat: 31.449924438393886, height: 0 },
+  { lng: 104.70397349861078, lat: 31.444611031898347, height: 0 },
+];
+let cartesianArr = CM.Position.transformWGS84ArrayToCartesianArray(wgs84Arr);
 ```
 
 #### 屏幕坐标转 84 坐标(纬度坐标) transformWindowToWGS84
@@ -160,9 +166,9 @@ let wgs84Arr = CM.Position.transformWGS84ArrayToCartesianArray(cartesianArr);
 
 - @returns
 
-| 返回值 | type   | 描述                       |
-| ------ | ------ | -------------------------- |
-| wgs84Obj  | Object | 返回一个经纬度的 84 坐标。 |
+| 返回值   | type   | 描述                       |
+| -------- | ------ | -------------------------- |
+| wgs84Obj | Object | 返回一个经纬度的 84 坐标。 |
 
 ```js
 let wgs84 = CM.Position.transformWindowToWGS84(position);
@@ -183,5 +189,6 @@ let wgs84 = CM.Position.transformWindowToWGS84(position);
 | position | Object | 屏幕坐标，格式{x:1,y:1} | -      |
 
 ```js
+let wgs84 = { lng: 104.6926049397171, lat: 31.449924438393886, height: 0 };
 let position = CM.Position.transformWGS84ToWindow(wgs84);
 ```
