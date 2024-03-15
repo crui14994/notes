@@ -18,6 +18,11 @@
 | point  | Object | 返回图标点的 entity 对象。 |
 
 ```js
+let position = {
+  lng: "104.706527",
+  lat: "31.448707",
+  height: 0,
+};
 let point = CM.Draw.loadMarker(position, myData, imgUrl);
 ```
 
@@ -27,7 +32,7 @@ let point = CM.Draw.loadMarker(position, myData, imgUrl);
 
 | 参数名    | type   | 描述                                                                              | 默认值 |
 | --------- | ------ | --------------------------------------------------------------------------------- | ------ |
-| position  | Array  | 线数据                                                                            | -      |
+| position  | Array  | 线数据，世界坐标数组                                                              | -      |
 | myData    | Object | 自定义的数据，在监听点击事件时根据此属性获取                                      | -      |
 | LineStyle | Object | 扩展样式，参考 cesium 文档 polygon 中的样式配置；使用此对象可替换或增加新的样式。 | -      |
 
@@ -38,16 +43,26 @@ let point = CM.Draw.loadMarker(position, myData, imgUrl);
 | polyline | Object | 返回线的 entity 对象。 |
 
 ```js
-let polyline = CM.Draw.loadPolyline(position, data, LineStyle);
+let positionWgs84 = [
+  { lng: 104.55, lat: 30.66 },
+  { lng: 104.65, lat: 30.56 },
+  { lng: 104.75, lat: 30.46 },
+  { lng: 104.85, lat: 30.36 },
+];
+//84坐标转世界坐标
+let cartesianArr =
+  CM.Position.transformWGS84ArrayToCartesianArray(positionWgs84);
+
+let polyline = CM.Draw.loadPolyline(cartesianArr, data, LineStyle);
 ```
 
 #### 绘制线 Polyline
 
 - @param
 
-| 参数名   | type     | 描述                      | 默认值 |
-| -------- | -------- | ------------------------- | ------ |
-| callback | Function | 回调函数;返回实体和线数据 | -      |
+| 参数名   | type     | 描述                               | 默认值 |
+| -------- | -------- | ---------------------------------- | ------ |
+| callback | Function | 回调函数;返回实体和线数据(84 坐标) | -      |
 
 ```js
 CM.Draw.Polyline((polyline, polylineData) => {});
@@ -71,7 +86,7 @@ CM.Draw.MeasureDistance((distance) => {});
 
 | 参数名       | type   | 描述                                                                     | 默认值 |
 | ------------ | ------ | ------------------------------------------------------------------------ | ------ |
-| position     | Array  | 面数据                                                                   | -      |
+| position     | Array  | 面数据 ，世界坐标数组                                                    | -      |
 | myData       | Object | 自定义的数据，在监听点击事件时根据此属性获取                             | -      |
 | PolygonStyle | Object | 扩展样式，参考 cesium 文档中的样式配置；使用此对象可替换或增加新的样式。 | -      |
 
@@ -82,7 +97,16 @@ CM.Draw.MeasureDistance((distance) => {});
 | polygon | Object | 返回面的 entity 对象。 |
 
 ```js
-let polygon = CM.Draw.loadPolygon(position, data, PolygonStyle);
+let positionWgs84 = [
+  { lng: 104.55, lat: 30.66 },
+  { lng: 106.65, lat: 31.56 },
+  { lng: 107.75, lat: 32.46 },
+  { lng: 108.85, lat: 33.36 },
+];
+//84坐标转世界坐标
+let cartesianArr =
+  CM.Position.transformWGS84ArrayToCartesianArray(positionWgs84);
+let polygon = CM.Draw.loadPolygon(cartesianArr, data, PolygonStyle);
 ```
 
 #### 加载空心面 loadHollowPolygon
@@ -91,7 +115,7 @@ let polygon = CM.Draw.loadPolygon(position, data, PolygonStyle);
 
 | 参数名     | type   | 描述                                         | 默认值 |
 | ---------- | ------ | -------------------------------------------- | ------ |
-| position   | Array  | 面数据                                       | -      |
+| position   | Array  | 面数据,世界坐标数组                          | -      |
 | myData     | Object | 自定义的数据，在监听点击事件时根据此属性获取 | -      |
 | LineStyle  | Object | 线的扩展样式，参考 cesium 文档中的样式配置   | -      |
 | GonStyle   | Object | 面扩展样式，参考 cesium 文档中的样式配置     | -      |
@@ -104,8 +128,18 @@ let polygon = CM.Draw.loadPolygon(position, data, PolygonStyle);
 | polygon | Object | 返回面的 entity 对象。 |
 
 ```js
+let positionWgs84 = [
+  { lng: 104.55, lat: 30.66 },
+  { lng: 104.65, lat: 30.56 },
+  { lng: 104.75, lat: 30.46 },
+  { lng: 104.85, lat: 30.36 },
+];
+//84坐标转世界坐标
+let cartesianArr =
+  CM.Position.transformWGS84ArrayToCartesianArray(positionWgs84);
+
 let polygon = CM.Draw.loadHollowPolygon(
-  position,
+  cartesianArr,
   data,
   LineStyle,
   GonStyle,
@@ -117,9 +151,9 @@ let polygon = CM.Draw.loadHollowPolygon(
 
 - @param
 
-| 参数名   | type     | 描述                      | 默认值 |
-| -------- | -------- | ------------------------- | ------ |
-| callback | Function | 回调函数;返回实体和面数据 | -      |
+| 参数名   | type     | 描述                               | 默认值 |
+| -------- | -------- | ---------------------------------- | ------ |
+| callback | Function | 回调函数;返回实体和面数据(84 坐标) | -      |
 
 ```js
 CM.Draw.Polygon((polyline, polygonData) => {});
@@ -153,7 +187,15 @@ CM.Draw.Polygon((polyline, polygonData) => {});
 | Cicle  | Object | 返回圆的 entity 对象。 |
 
 ```js
-let Cicle = CM.Draw.loadCicle(ciclePosition, myData);
+let positionWgs84 = [
+  { lng: 104.69567372813435, lat: 31.450207195284513, height: 0 },
+  { lng: 104.70273793520899, lat: 31.444257890981987, height: 0 },
+];
+//84坐标转世界坐标
+let cartesianArr =
+  CM.Position.transformWGS84ArrayToCartesianArray(positionWgs84);
+
+let Cicle = CM.Draw.loadCicle(cartesianArr, myData);
 ```
 
 #### 绘制圆 Cicle
@@ -174,7 +216,7 @@ CM.Draw.Cicle((cicle, cicleData) => {});
 
 | 参数名            | type   | 描述                                         | 默认值 |
 | ----------------- | ------ | -------------------------------------------- | ------ |
-| rectanglePosition | Array  | 矩形数据                                     | -      |
+| rectanglePosition | Array  | 矩形数据 ,世界坐标数组                       | -      |
 | myData            | Object | 自定义的数据，在监听点击事件时根据此属性获取 | -      |
 
 - @returns
@@ -184,7 +226,15 @@ CM.Draw.Cicle((cicle, cicleData) => {});
 | Rectangle | Object | 返回矩形的 entity 对象。 |
 
 ```js
-let rectangle = CM.Draw.loadRectangle(rectanglePosition, myData);
+let positionWgs84 = [
+  { lng: 104.6926049397171, lat: 31.449924438393886, height: 0 },
+  { lng: 104.70397349861078, lat: 31.444611031898347, height: 0 },
+];
+//84坐标转世界坐标
+let cartesianArr =
+  CM.Position.transformWGS84ArrayToCartesianArray(positionWgs84);
+
+let rectangle = CM.Draw.loadRectangle(cartesianArr, myData);
 ```
 
 #### 绘制矩形 Rectangle
@@ -193,7 +243,7 @@ let rectangle = CM.Draw.loadRectangle(rectanglePosition, myData);
 
 | 参数名   | type     | 描述                                          | 默认值 |
 | -------- | -------- | --------------------------------------------- | ------ |
-| callback | Function | 回调函数;返回矩形的 entity 实体对象和矩形数据 | -      |
+| callback | Function | 回调函数;返回矩形的 entity 实体对象和矩形数据(84 坐标) | -      |
 
 ```js
 CM.Draw.Rectangle((rectangle, rectangleData) => {});
@@ -238,8 +288,8 @@ let wallEntity = CM.Draw.loadWall(wallPosition, material);
 
 - @param
 
-| 参数名  | type   | 描述                   | 默认值 |
-| ------- | ------ | ---------------------- | ------ |
+| 参数名  | type   | 描述                           | 默认值 |
+| ------- | ------ | ------------------------------ | ------ |
 | options | Object | 水波纹图标点配置，属性参考下表 | -      |
 
 ###### options 属性
