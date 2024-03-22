@@ -1,4 +1,4 @@
-## Imagery
+## Popup
 
 #### 创建弹窗 createPopup
 
@@ -17,7 +17,7 @@
 
 
 ```js
-CM.Imagery.createPopup(
+CM.Popup.createPopup(
   id,
   wgs_84,
   (width = 300),
@@ -30,5 +30,5 @@ CM.Imagery.createPopup(
 #### 关闭 popup 弹窗 closePopup
 
 ```js
-CM.Imagery.closePopup();
+CM.Popup.closePopup();
 ```
