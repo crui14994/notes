@@ -16,11 +16,10 @@ let res = CM.Position.getCameraAttitude();
 
 - @param
 
-  eventPosition :event.position
-
-| 参数名 | type   | 描述                                                      | 默认值 |
-| ------ | ------ | --------------------------------------------------------- | ------ |
-| type   | String | 1-世界坐标（地图/椭球体表面的坐标） 2-地形坐标 3-场景坐标 | 1      |
+| 参数名        | type   | 描述                                                      | 默认值 |
+| ------------- | ------ | --------------------------------------------------------- | ------ |
+| eventPosition | Object | event.positio                                             |        |
+| type          | String | 1-世界坐标（地图/椭球体表面的坐标） 2-地形坐标 3-场景坐标 | 1      |
 
 - @returns
 
@@ -30,13 +29,13 @@ let res = CM.Position.getCameraAttitude();
 
 ```js
 //当前点击视线与椭球面相交处的坐标
-let position1 = CM.Position.getClickPosition(1);
+let position1 = CM.Position.getClickPosition(eventPosition,1);
 
 //只能求交于地形，不包括模型、倾斜摄影表面，能获取加载地形后的坐标，pick(ray, scene, result) → Cartesian3|undefined
-let position2 = CM.Position.getClickPosition(2);
+let position2 = CM.Position.getClickPosition(eventPosition,2);
 
 //根据窗口坐标，从场景的深度缓冲区中拾取相应的位置，返回笛卡尔坐标，不仅可以求交地形，还可以求交除地形以外其他所有写深度的物体。pickPosition(windowPosition, result) → Cartesian3
-let position3 = CM.Position.getClickPosition(3);
+let position3 = CM.Position.getClickPosition(eventPosition,3);
 ```
 
 #### 根据经纬度获取 terrain 高程，精度为 m getHeigthByLonLat
