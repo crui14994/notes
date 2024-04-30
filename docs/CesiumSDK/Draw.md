@@ -157,7 +157,7 @@ let polygon = CM.Draw.loadHollowPolygon(
 | ------------ | -------- | ------------------------------------------------------------------------ | ------ |
 | callback     | Function | 回调函数;返回实体和面数据(84 坐标)                                       | -      |
 | measure      | Boolean  | 是否是测量                                                               | -      |
-| PolygonStyle | Object   | 扩展样式，参考 cesium 文档中的样式配置；使用此对象可替换或增加新的样式。 | -      |
+| PolygonStyle | Object   | 扩展样式，参考 cesium 文档中Polygon的样式配置；使用此对象可替换或增加新的样式。 | -      |
 
 ```js
 CM.Draw.Polygon((polyline, polygonData) => {});
