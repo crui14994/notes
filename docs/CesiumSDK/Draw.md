@@ -340,7 +340,7 @@ let circleWaveEntity = CM.Draw.loadCircleWaveMarker({
 | callback | Array  | 回调函数，每次拖动一个点后鼠标弹起触发，返回一个坐标数组 | -      |
 
 ```js
-CM.Draw.startEditEntity(editEntity, (positions) => {
+CM.Draw.startEditEntity(entity, (positions) => {
   console.log(positions);
 });
 ```
