@@ -241,8 +241,8 @@ let rectangle = CM.Draw.loadRectangle(cartesianArr, myData);
 
 - @param
 
-| 参数名   | type     | 描述                                          | 默认值 |
-| -------- | -------- | --------------------------------------------- | ------ |
+| 参数名   | type     | 描述                                                   | 默认值 |
+| -------- | -------- | ------------------------------------------------------ | ------ |
 | callback | Function | 回调函数;返回矩形的 entity 实体对象和矩形数据(84 坐标) | -      |
 
 ```js
@@ -327,5 +327,34 @@ let circleWaveEntity = CM.Draw.loadCircleWaveMarker({
   // imgUrl:'',
   // myData:{},
   // imgSize:{ w: 40, h: 40 }
+});
+```
+
+#### 编辑 entity(线、面)对象 startEditEntity
+
+- @param
+
+| 参数名   | type   | 描述                                                     | 默认值 |
+| -------- | ------ | -------------------------------------------------------- | ------ |
+| entity   | Object | entity 对象                                              | -      |
+| callback | Array  | 回调函数，每次拖动一个点后鼠标弹起触发，返回一个坐标数组 | -      |
+
+```js
+CM.Draw.startEditEntity(editEntity, (positions) => {
+  console.log(positions);
+});
+```
+
+#### 停止编辑 entity 对象
+
+- @param
+
+| 参数名   | type  | 描述                                 | 默认值 |
+| -------- | ----- | ------------------------------------ | ------ |
+| callback | Array | 回调函数，返回当前编辑的 entity 对象 | -      |
+
+```js
+CM.Draw.stopEditEntity((res) => {
+  console.log(res);
 });
 ```
