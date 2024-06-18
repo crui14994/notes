@@ -111,6 +111,20 @@ let cartesianArr =
 let polygon = CM.Draw.loadPolygon(cartesianArr, data, PolygonStyle);
 ```
 
+#### 绘制面 Polygon
+
+- @param
+
+| 参数名       | type     | 描述                                                                              | 默认值 |
+| ------------ | -------- | --------------------------------------------------------------------------------- | ------ |
+| callback     | Function | 回调函数;返回实体和面数据(84 坐标)                                                | -      |
+| measure      | Boolean  | 是否是测量                                                                        | -      |
+| PolygonStyle | Object   | 扩展样式，参考 cesium 文档中 Polygon 的样式配置；使用此对象可替换或增加新的样式。 | -      |
+
+```js
+CM.Draw.Polygon((polyline, polygonData) => {});
+```
+
 #### 加载空心面 loadHollowPolygon
 
 - @param
@@ -149,31 +163,34 @@ let polygon = CM.Draw.loadHollowPolygon(
 );
 ```
 
-#### 绘制面 Polygon
+#### 绘制空心面 \_createHollowPolygon
 
 - @param
 
-| 参数名       | type     | 描述                                                                     | 默认值 |
-| ------------ | -------- | ------------------------------------------------------------------------ | ------ |
-| callback     | Function | 回调函数;返回实体和面数据(84 坐标)                                       | -      |
-| measure      | Boolean  | 是否是测量                                                               | -      |
-| PolygonStyle | Object   | 扩展样式，参考 cesium 文档中Polygon的样式配置；使用此对象可替换或增加新的样式。 | -      |
+| 参数名     | type     | 描述                                       | 默认值 |
+| ---------- | -------- | ------------------------------------------ | ------ |
+| callback   | Function | 回调函数;返回实体和面数据(84 坐标)         | -      |
+| LineStyle  | Object   | 线的扩展样式，参考 cesium 文档中的样式配置 | -      |
+| GonStyle   | Object   | 面扩展样式，参考 cesium 文档中的样式配置   | -      |
+| LabelStyle | Object   | 文本扩展样式，参考 cesium 文档中的样式配置 | -      |
 
 ```js
-CM.Draw.Polygon((polyline, polygonData) => {});
+let LineStyle = {
+  width: 3,
+  material: new Cesium.Color.fromCssColorString("#fff"),
+};
+let GonStyle = {
+  material: new Cesium.Color.fromCssColorString("#fff").withAlpha(0.5),
+};
+CM.Draw.HollowPolygon(
+  (hollowPolygon, polygonData) => {
+    console.log(hollowPolygon);
+    console.log(polygonData);
+  },
+  LineStyle,
+  GonStyle
+);
 ```
-
-#### 测量面积 MeasureArea
-
-- @param
-
-  | 参数名   | type     | 描述         | 默认值 |
-  | -------- | -------- | ------------ | ------ |
-  | callback | Function | 返回面积数据 | -      |
-
-  ```js
-  CM.Draw.MeasureArea((area) => {});
-  ```
 
 #### 加载圆 loadCicle
 
@@ -362,3 +379,15 @@ CM.Draw.stopEditEntity((res) => {
   console.log(res);
 });
 ```
+
+#### 测量面积 MeasureArea
+
+- @param
+
+  | 参数名   | type     | 描述         | 默认值 |
+  | -------- | -------- | ------------ | ------ |
+  | callback | Function | 返回面积数据 | -      |
+
+  ```js
+  CM.Draw.MeasureArea((area) => {});
+  ```

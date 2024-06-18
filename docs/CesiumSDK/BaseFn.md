@@ -91,3 +91,34 @@ let imgConfig = {
 };
 let pointCenter = CM.BaseFn.canvasToImage(icon, "测试文字", imgConfig);
 ```
+
+#### 计算一个 84 数组的最大经纬度和最小经纬度并生成 rectangle 范围
+
+- @param
+
+| 参数名   | type     | 描述                                                          | 默认值 |
+| -------- | -------- | ------------------------------------------------------------- | ------ |
+| wgs84Arr | Array    | 84 坐标数组                                                   | -      |
+| callback | Function | 回调函数，返回最大经纬度和最小经纬度 和 Cesium.Rectangle 对象 | -      |
+| extended | Function | Rectangle 对象需要扩大的值。值越大显示的 Rectangle 范围越大   | -      |
+
+```js
+let wgs84Arr = [
+  { lng: "", lat: "" },
+  { lng: "", lat: "" },
+  { lng: "", lat: "" },
+];
+CM.BaseFn.computedRectangle(wgs84Arr, (positionArr, rectangle) => {
+  console.log(positionArr);
+  //跳转到此范围
+  viewer.camera.flyTo({
+    destination: rectangle,
+    duration: 1,
+    orientation: {
+      heading: Cesium.Math.toRadians(0),
+      pitch: Cesium.Math.toRadians(-90.0),
+      roll: Cesium.Math.toRadians(0),
+    },
+  });
+});
+```
