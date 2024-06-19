@@ -124,11 +124,18 @@ CM.Viewer.loadKml("kmlUrl", true);
 
 - @param
 
-| 参数名  | type    | 描述                    | 默认值 |
-| ------- | ------- | ----------------------- | ------ |
-| jsonUrl | String  | GeoJson 地址            | -      |
-| fly     | Boolean | 是否飞行到 GeoJson 区域 | false  |
+| 参数名   | type     | 描述                          | 默认值 |
+| -------- | -------- | ----------------------------- | ------ |
+| geoJson  | String   | GeoJson 地址                  | -      |
+| myData   | Object   | 自定义数据                    |        |
+| callback | Function | 返回数据 entities, dataSource |        |
+| style    | Object   | 数据样式                      |        |
 
 ```js
-CM.Viewer.loadKml("kmlUrl", true);
+CM.Viewer.loadGeoJson(geoJson, {}, (entities, dataSource) => {
+  console.log(entities, dataSource)
+}, {
+  fill: new Cesium.Color.fromCssColorString("rgba(255,255,0,.9)"),
+  stroke: new Cesium.Color.fromCssColorString("rgba(255,255,0,1)"), //折线和多边形轮廓的默认颜色
+});
 ```

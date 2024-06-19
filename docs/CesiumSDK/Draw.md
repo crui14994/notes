@@ -125,7 +125,7 @@ let polygon = CM.Draw.loadPolygon(cartesianArr, data, PolygonStyle);
 CM.Draw.Polygon((polyline, polygonData) => {});
 ```
 
-#### 加载空心面 loadHollowPolygon
+#### 加载带边框的面（空心面） loadHollowPolygon
 
 - @param
 
@@ -163,7 +163,7 @@ let polygon = CM.Draw.loadHollowPolygon(
 );
 ```
 
-#### 绘制空心面 \_createHollowPolygon
+#### 绘制带边框的面（空心面） HollowPolygon
 
 - @param
 
